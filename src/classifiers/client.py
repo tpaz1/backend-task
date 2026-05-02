@@ -29,13 +29,8 @@ _SYSTEM_ALL = (
 )
 
 _SYSTEM_FAST = (
-    "You are a topic classifier for a content security system.\n"
-    "Given a user prompt and a list of active topic categories, "
-    "identify the FIRST topic you find.\n"
-    "Stop as soon as you find one match — do not look for more.\n\n"
-    "Active topics: {topics}\n\n"
-    'Respond ONLY with valid JSON: {{"topics": ["<topic>"]}}\n'
-    "Use only the exact keys listed. Return an empty list if no topics match."
+    'Return JSON {{"topics": ["X"]}} where X is one topic from [{topics}] '
+    'that matches the user prompt, or {{"topics": []}} if none match.'
 )
 
 
