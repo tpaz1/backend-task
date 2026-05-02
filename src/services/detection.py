@@ -5,7 +5,16 @@ from src.services.audit import AuditStore
 
 def _enabled_topics(request: PromptRequest) -> list[str]:
     s = request.settings
-    return [t for t, active in [("health", s.health), ("finance", s.finance), ("legal", s.legal), ("hr", s.hr)] if active]
+    return [
+        t
+        for t, active in [
+            ("health", s.health),
+            ("finance", s.finance),
+            ("legal", s.legal),
+            ("hr", s.hr),
+        ]
+        if active
+    ]
 
 
 async def detect(request: PromptRequest, store: AuditStore) -> DetectionResult:

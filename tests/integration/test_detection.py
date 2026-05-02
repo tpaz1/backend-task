@@ -17,7 +17,10 @@ async def test_detect_returns_matched_topics() -> None:
         async with AsyncClient(transport=transport, base_url="http://test") as client:
             response = await client.post(
                 "/detect",
-                json={"prompt": "How do I treat depression?", "settings": {"health": True, "finance": False, "hr": False, "legal": False}},
+                json={
+                    "prompt": "How do I treat depression?",
+                    "settings": {"health": True, "finance": False, "hr": False, "legal": False},
+                },
             )
         app.dependency_overrides.clear()
 
@@ -32,7 +35,10 @@ async def test_protect_returns_at_most_one_topic() -> None:
         async with AsyncClient(transport=transport, base_url="http://test") as client:
             response = await client.post(
                 "/protect",
-                json={"prompt": "Hiring a new engineer", "settings": {"health": False, "finance": False, "hr": True, "legal": False}},
+                json={
+                    "prompt": "Hiring a new engineer",
+                    "settings": {"health": False, "finance": False, "hr": True, "legal": False},
+                },
             )
         app.dependency_overrides.clear()
 

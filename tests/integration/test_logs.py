@@ -15,7 +15,10 @@ async def test_logs_returns_audit_entries_for_calls() -> None:
         async with AsyncClient(transport=transport, base_url="http://test") as client:
             await client.post(
                 "/detect",
-                json={"prompt": "Best ETFs?", "settings": {"health": False, "finance": True, "hr": False, "legal": False}},
+                json={
+                    "prompt": "Best ETFs?",
+                    "settings": {"health": False, "finance": True, "hr": False, "legal": False},
+                },
             )
             response = await client.get("/logs")
 

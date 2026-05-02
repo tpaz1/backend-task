@@ -30,7 +30,8 @@ _SYSTEM_ALL = (
 
 _SYSTEM_FAST = (
     "You are a topic classifier for a content security system.\n"
-    "Given a user prompt and a list of active topic categories, identify the FIRST topic you find.\n"
+    "Given a user prompt and a list of active topic categories, "
+    "identify the FIRST topic you find.\n"
     "Stop as soon as you find one match — do not look for more.\n\n"
     "Active topics: {topics}\n\n"
     'Respond ONLY with valid JSON: {{"topics": ["<topic>"]}}\n'
@@ -67,4 +68,6 @@ async def classify_all(prompt: str, enabled_topics: list[str]) -> list[str]:
 
 async def classify_fast(prompt: str, enabled_topics: list[str]) -> list[str]:
     """Return the first matching topic from enabled_topics found in prompt."""
-    return (await _call(_SYSTEM_FAST.format(topics=", ".join(enabled_topics)), prompt, enabled_topics))[:1]
+    return (
+        await _call(_SYSTEM_FAST.format(topics=", ".join(enabled_topics)), prompt, enabled_topics)
+    )[:1]
