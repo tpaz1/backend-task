@@ -139,6 +139,7 @@ This README is the entry point. Each major directory has its own README explaini
 - [src/](src/README.md) — source tree overview and the one architectural rule
 - [tests/](tests/README.md) — test organization and the two-tier strategy
 - [scripts/](scripts/README.md) — smoke test, what it checks, how to run it
+- [docs/](docs/README.md) — process artifacts and notes on the AI-assisted workflow used to build this
 
 ---
 
