@@ -132,6 +132,17 @@ The conclusion is that median latency is bounded by the proxy round-trip (~800ms
 
 ---
 
+## Documentation
+
+This README is the entry point. Each major directory has its own README explaining what lives there:
+
+- [src/](src/README.md) — source tree overview and the one architectural rule
+- [tests/](tests/README.md) — test organization and the two-tier strategy
+- [scripts/](scripts/README.md) — smoke test, what it checks, how to run it
+- [postman/](postman/README.md) — Postman collection for manual API testing
+
+---
+
 ## Repository layout
 
 ```
